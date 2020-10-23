@@ -389,14 +389,6 @@ incorporate informal code reviews into our workflow.
 - [Git Teams](http://gitforteams.com/)
 - [Git Alias](https://githowto.com/aliases)
 
-# You Do: Group Work
-
-- Break into teams & choose a git czar
-- Git czar should create a simple React app in their git repository and share the link with their group
-- As a group, choose one (or many) approach(es) outlined above
-
-## Bonus
-
 ## Tips & Tricks
 
 **Using `git fetch` and `git diff`**
@@ -473,53 +465,4 @@ Oh-my-zsh also includes great
 [git aliases](https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet#git) out
 of the box.
 
-## Rebasing
 
-Rebasing allows us to rearrange and effectively rewrite our commit history.
-Rather than combining the most recent commits from two different branches via a
-single commit, it combines the two branches themselves, rearranging their
-commits while **_re-writing_** the repo's commit history. For that reason, it
-can be dangerous.
-
-### Git Merge
-
-![Git
-Pull/Merge](https://git.generalassemb.ly/storage/user/6376/files/aee6a68e-81b6-11e7-9fb7-31c12053681f)
-
-### Git Rebase
-
-![Git
-Rebase](https://git.generalassemb.ly/storage/user/6376/files/c6f3d54e-81b6-11e7-9f1b-c5a81d1e0207)
-
-[Document Dive](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
-
-### Rebase vs Merge
-
-![Rebase vs
-Merge](https://raw.githubusercontent.com/gitforteams/diagrams/master/flowcharts/rebase-or-merge.png)
-
-<details>
-
-<summary>Example Scenario</summary>
-
-Here's what a rebase looks like. Suppose we have two branches, a master and a
-feature branch.
-
-One day, someone makes a commit onto the master branch. We want to include those
-changes into our feature branch, so that our code doesn't conflict with theirs.
-From our feature branch, if we run the command
-`git pull --rebase <remote> <branch>`, we can tell git to rewrite the history of
-our feature branch as if the new commit on master had always been there.
-
-Rebase is extremely useful for cleaning up your commit history, but it also
-carries risk; when you rebase, you are in fact discarding your old commits and
-replacing them with new (though admittedly, similar) commits, and this can
-seriously screw up a collaborator if you're working in a shared repo. **The
-golden rule for git rebase is "Only rebase before sharing your code, never
-after."**
-
-Like git merge, git rebase also sometimes runs into merge conflicts that need to
-be resolved. The procedure for doing this is almost the same; once you fix the
-conflicts, run `git rebase --continue` to complete the rebase.
-
-</details>
